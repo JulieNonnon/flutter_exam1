@@ -24,14 +24,19 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: <Widget>[ // Ajout des crochets pour entourer les enfants
           const VideoHero(), // component affichant un Hero avec un background Video
-          const Text(
-            'I. Nos Régions',
-            style: TextStyle(
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-              backgroundColor: Colors.blue,
-            ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[        
+              Text(
+                'I. Nos Régions',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  backgroundColor: Colors.blue,
+                ),
+              ),
+            ],
           ),
           Container(
             color: const Color.fromARGB(255, 224, 224, 224),
@@ -63,9 +68,18 @@ class HomePage extends StatelessWidget {
                     backgroundColor: Colors.grey,
                     foregroundColor: Colors.black,
                   ),
-                  child: const Text(
+                  
+                  child: const Row(                     
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(Icons.search),
+                      SizedBox(width: 8.0),
+                      Text(
                     "Rechercher Par Région",
                   ),
+                    ]
+                  )
+
                 ),
 
                 const Text(

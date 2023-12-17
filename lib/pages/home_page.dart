@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_examen1/components/video_hero.dart';
+//import 'package:flutter_examen1/components/video_hero.dart';
 import 'package:flutter_examen1/pages/regions_page.dart';
 
 
@@ -23,7 +23,8 @@ class HomePage extends StatelessWidget {
 
       body: ListView(
         children: <Widget>[ // Ajout des crochets pour entourer les enfants
-          const VideoHero(), // component affichant un Hero avec un background Video
+          //const VideoHero(videoPath: 'assets/video/v1.mp4'), 
+          // component vidéo commenté, fait disparaitre les autres éléments si décommenté
           const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[        

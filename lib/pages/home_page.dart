@@ -19,7 +19,71 @@ class HomePage extends StatelessWidget {
             color: Colors.white,
           ),
         ),
+        leading: Builder( // mise en place menu burger
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer(); // menu coulissant
+              },
+            );
+          }
+        ),
       ),
+
+    //mise en place drawer (menu coulissant)
+    drawer: Drawer(
+      child:ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.blueGrey,
+            ),
+            child: Text(
+              'Menu Burger',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          ListTile( //Onglet Accueil
+              leading: const Icon(Icons.home),
+              title: const Text('Accueil'),
+              onTap: () { //placeholder Region Page pour voir si navigation fonctionnelle
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder:(context)=>
+                  const RegionPage(title:"Region Page"))
+                );
+              },
+            ),
+            ListTile( //Onglet Regions
+              leading: const Icon(Icons.flag),
+              title: const Text('Régions'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder:(context)=>
+                  const RegionPage(title:"Region Page"))
+                );
+              },
+            ),
+            ListTile( //Onglet Parametres
+              leading: const Icon(Icons.settings),
+              title: const Text('Paramètres'),
+              onTap: () { //placeholder Region Page pour voir si navigation fonctionnelle
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder:(context)=>
+                  const RegionPage(title:"Region Page"))
+                );
+              },
+          ),
+        ],
+      ),
+    ),
 
       body: ListView(
         children: <Widget>[ // Ajout des crochets pour entourer les enfants
